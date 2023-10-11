@@ -41,7 +41,7 @@ const Profile = () => {
           main,
         }
       );
-      localStorage.setItem("main", main);
+
       alert("Changing your main will require you to log in");
       logout();
     } catch (error) {
@@ -59,7 +59,6 @@ const Profile = () => {
       );
 
       alert("Username successfully updated!");
-      localStorage.setItem("username", newUsername);
       logout();
     } catch (error) {
       setError(error.response.data.message);
