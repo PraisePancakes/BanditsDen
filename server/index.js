@@ -5,6 +5,15 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 require("dotenv").config();
 
+const changeUsernameRoute = require("./Routes/changeUsername");
+const deleteUserRoute = require("./Routes/deleteAccount");
+const setSmashMainRoute = require("./Routes/setSmashMain");
+const getLeaderboardRoute = require("./Routes/getLeaderboard");
+const getSmashCharactersRoute = require("./Routes/getSmashCharacters");
+const updateLeaderboardRoute = require("./Routes/updateLeaderboard");
+
+const authRoutes = require("./Routes/Auth/AuthRoutes");
+
 const corsOptions = {
   origin: "http://localhost:3000",
   credentials: true, // Allow credentials (e.g., cookies, authorization headers)
@@ -27,3 +36,11 @@ mongoose
       console.log("Server listening on Port", portNum);
     })
   );
+
+app.use("/auth", authRoutes);
+app.use("/leaderboard", getLeaderboardRoute);
+app.use("/leaderboard", updateLeaderboardRoute);
+app.use("/smashCharacters", getSmashCharactersRoute);
+app.use("/setSmashMain", setSmashMainRoute);
+app.use("/changeUsername", changeUsernameRoute);
+app.use("/deleteUser", deleteUserRoute);
