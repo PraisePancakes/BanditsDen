@@ -15,7 +15,7 @@ const updateLeaderboardRoute = require("./Routes/updateLeaderboard");
 const authRoutes = require("./Routes/Auth/AuthRoutes");
 
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "https://main--magical-sprinkles-a8dcc3.netlify.app",
   credentials: true, // Allow credentials (e.g., cookies, authorization headers)
   allowedHeaders: ["Content-Type", "Authorization"], // Specify the allowed headers
 };

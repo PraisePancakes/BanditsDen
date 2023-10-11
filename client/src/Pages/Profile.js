@@ -19,7 +19,7 @@ const Profile = () => {
   const handleOpenCharMenu = async () => {
     try {
       const list = await axios.get(
-        "https://bbanditservices.onrender.com/smashCharacters"
+        "https://bbanditsden.onrender.com/smashCharacters"
       );
       const charNames = list.data.map((chars) => ({
         ...chars,
@@ -35,7 +35,7 @@ const Profile = () => {
   const handleMainChange = async () => {
     try {
       await axios.patch(
-        `https://bbanditservices.onrender.com/setSmashMain/${user._id}`,
+        `https://bbanditsden.onrender.com/setSmashMain/${user._id}`,
         {
           main,
         }
@@ -51,7 +51,7 @@ const Profile = () => {
   const handleUsernameChange = async () => {
     try {
       await axios.patch(
-        `https://bbanditservices.onrender.com/changeUsername/${user._id}`,
+        `https://bbanditsden.onrender.com/changeUsername/${user._id}`,
         {
           username: newUsername,
         }
@@ -68,7 +68,7 @@ const Profile = () => {
   const handleDiscardAcc = async () => {
     try {
       await axios.delete(
-        `https://bbanditservices.onrender.com/deleteUser/${user._id}`,
+        `https://bbanditsden.onrender.com/deleteUser/${user._id}`,
         {
           data: { password: passwordCheck },
         }

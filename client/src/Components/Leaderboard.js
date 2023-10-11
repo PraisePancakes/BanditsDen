@@ -14,14 +14,14 @@ const Leaderboard = (props) => {
   const [updateFnWins, setUpdatedFnWins] = useState(0);
   const [updateFnLosses, setUpdatedFnLosses] = useState(0);
   const [selectedUserId, setSelectedUserId] = useState(null); //Authorized state only !!
-  //https://bbanditservices.onrender.com
+  //https://bbanditsden.onrender.com
 
   const { user } = useAuth();
   useEffect(() => {
     const getUsers = async () => {
       try {
         const list = await axios.get(
-          "https://bbanditservices.onrender.com/leaderboard"
+          "https://bbanditsden.onrender.com/leaderboard"
         );
         const updatedListUsers = list.data.map((user) => ({
           ...user,
@@ -42,7 +42,7 @@ const Leaderboard = (props) => {
   const handleUpdateWinsLosses = async () => {
     try {
       await axios.patch(
-        `https://bbanditservices.onrender.com/leaderboard/${selectedUserId}`,
+        `https://bbanditsden.onrender.com/leaderboard/${selectedUserId}`,
         {
           smashWins: updateSmashWins,
           smashLosses: updateSmashLosses,
