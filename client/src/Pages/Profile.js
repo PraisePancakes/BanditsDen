@@ -12,6 +12,7 @@ const Profile = () => {
   const [passwordCheck, setPasswordCheck] = useState("");
   const [isNewUnameClicked, setIsNewUnameClicked] = useState(false);
   const [isOpenCharMenu, setIsOpenCharMenu] = useState(false);
+  const [error, setError] = useState(null);
 
   let username = user.username;
   let createdAt = user.createdAt;
@@ -28,7 +29,7 @@ const Profile = () => {
       setCharList(charNames);
       setIsOpenCharMenu(!isOpenCharMenu);
     } catch (error) {
-      console.log(error);
+      setError(error.response.data.message);
     }
   };
 
@@ -44,7 +45,7 @@ const Profile = () => {
       alert("Changing your main will require you to log in");
       logout();
     } catch (error) {
-      console.log(error);
+      setError(error.response.data.message);
     }
   };
 
@@ -61,7 +62,7 @@ const Profile = () => {
       localStorage.setItem("username", newUsername);
       logout();
     } catch (error) {
-      console.log(error);
+      setError(error.response.data.message);
     }
   };
 
@@ -87,6 +88,13 @@ const Profile = () => {
         <h1 className="Profile--Header text-center mt-10  font-thin text-4xl">
           PROFILE
         </h1>
+        {error && (
+          <div className="flex flex-col items-center mx-10 mt-2">
+            <p className="pb-1 px-2 lg:w-[30rem] sm:w-[25rem] h-10 w-[20rem] text-xl text-center border-2 outline-none border-red-400 text-red-500 mb-2">
+              {error}
+            </p>
+          </div>
+        )}
         <h2 className="Username--Sub-Header text-center text-2xl  font-bold">
           <span className="Username::Before-Text font-thin underline underline-offset-4">
             Bandit username:{" "}

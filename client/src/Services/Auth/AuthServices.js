@@ -1,5 +1,6 @@
 import axios from "axios";
 
+axios.defaults.withCredentials = true;
 export const login = async (form) => {
   return await axios.post("https://bbanditsden.onrender.com/auth/login", form);
 };
