@@ -155,7 +155,7 @@ const Navbar = (props) => {
             <Link
               to="/auth/register"
               className="border-[1px] h-[2.2rem] md:w-[7rem] w-[5rem]
-            hover:bg-red-900 transition-colors duration-500"
+            hover:bg-red-900 transition-colors duration-500 flex justify-center items-center"
             >
               {" "}
               <span className="md:text-base text-xs">SIGN-UP</span>
