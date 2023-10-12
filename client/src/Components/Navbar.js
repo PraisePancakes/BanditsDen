@@ -135,10 +135,12 @@ const Navbar = (props) => {
             </button>
           ) : (
             <Link to="/auth/login">
-              <button className="p-1 h-[2.2rem] md:w-[7rem] w-[5rem] flex items-center gap-2 hover:bg-red-900 hover:border-[1px] transition-colors duration-500">
-                <CiLogin size={20} />
-                <span className="md:text-base text-xs">LOG-IN</span>
-              </button>
+              {" "}
+              className="p-1 h-[2.2rem] md:w-[7rem] w-[5rem] flex items-center
+              gap-2 hover:bg-red-900 hover:border-[1px] transition-colors
+              duration-500">
+              <CiLogin size={20} />
+              <span className="md:text-base text-xs">LOG-IN</span>
             </Link>
           )}
           {isAuth ? (
@@ -149,9 +151,10 @@ const Navbar = (props) => {
             </Link>
           ) : (
             <Link to="/auth/register">
-              <button className="border-[1px] h-[2.2rem] md:w-[7rem] w-[5rem] hover:bg-red-900 transition-colors duration-500">
-                <span className="md:text-base text-xs">SIGN-UP</span>
-              </button>
+              {" "}
+              className="border-[1px] h-[2.2rem] md:w-[7rem] w-[5rem]
+              hover:bg-red-900 transition-colors duration-500">
+              <span className="md:text-base text-xs">SIGN-UP</span>
             </Link>
           )}
         </div>

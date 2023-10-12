@@ -25,9 +25,12 @@ const Hero = () => {
         </h1>
         {!isAuth && (
           <h2 className="Main--Sub-Header text-xl mt-2">
-            <button className="!Token--Sign-Up_Btn underline underline-offset-4 text-red-600">
+            <Link
+              to="/auth/register"
+              className="!Token--Sign-Up_Btn underline underline-offset-4 text-red-600"
+            >
               Sign up
-            </button>{" "}
+            </Link>{" "}
             for free and join locals near you
           </h2>
         )}
@@ -89,9 +92,12 @@ const Hero = () => {
           </div>
         </section>
         {!isAuth && (
-          <button className="!Token--Register-Btn mt-7 border-white border-[1px] p-3 hover:bg-red-900 transition-colors duration-500">
+          <Link
+            to="/auth/register"
+            className="!Token--Register-Btn mt-7 border-white border-[1px] p-3 hover:bg-red-900 transition-colors duration-500"
+          >
             REGISTER TO PLAY
-          </button>
+          </Link>
         )}
       </section>
       <section className="Sub--Hero--Container lg:px-[16rem] text-center mt-10 px-10">
