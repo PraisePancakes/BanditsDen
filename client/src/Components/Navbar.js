@@ -76,7 +76,7 @@ const Navbar = (props) => {
                 <span className="md:text-base text-xs">LOG-OUT</span>
               </button>
             ) : (
-              <Link to="/login">
+              <Link to="/auth/login">
                 <button className="border-[1px] border-black p-1 h-[2.2rem] md:w-[7rem] w-[5rem] flex items-center gap-2 hover:bg-red-900 transition-colors duration-500">
                   <CiLogin size={20} />
                   <span className="md:text-base text-xs ">LOG-IN</span>
@@ -90,7 +90,7 @@ const Navbar = (props) => {
                 </button>
               </Link>
             ) : (
-              <Link to="/register">
+              <Link to="/auth/register">
                 <button className="h-[2.2rem] md:w-[7rem] w-[5rem] border-[1px] hover:bg-red-900 transition-colors duration-500 border-black">
                   <span className="md:text-base text-xs ">SIGN-UP</span>
                 </button>
