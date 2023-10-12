@@ -14,10 +14,11 @@ module.exports = async (req, res) => {
           .send({ message: "_RT has an invalid signature or is expired" });
       }
       res.clearCookie("_AT", {
-        expires: new Date(0),
         path: "/",
         httpOnly: true,
-        sameSite: "lax",
+        expiresIn: new Date(Date.now() + 60000 * 60 * 24 * 24 * 6),
+        sameSite: "none",
+        secure: true,
       });
 
       const ACCESS_TOKEN = jwt.sign(
@@ -34,7 +35,8 @@ module.exports = async (req, res) => {
         path: "/",
         httpOnly: true,
         expiresIn: new Date(Date.now() + 60000 * 60 * 24 * 24 * 6),
-        sameSite: "lax",
+        sameSite: "none",
+        secure: true,
       });
 
       return res.send({
