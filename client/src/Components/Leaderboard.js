@@ -98,7 +98,7 @@ const Leaderboard = (props) => {
                   <div>
                     <input
                       type="number"
-                      value={updateSmashWins}
+                      value={otherUser.smashWins}
                       onChange={(e) => setUpdatedSmashWins(e.target.value)}
                       className="text-black"
                     />
@@ -130,7 +130,7 @@ const Leaderboard = (props) => {
                     <div>
                       <input
                         type="number"
-                        value={updateSmashLosses}
+                        value={otherUser.smashLosses}
                         onChange={(e) => setUpdatedSmashLosses(e.target.value)}
                         className="text-black"
                       />
